@@ -39,6 +39,18 @@
         android:layout_marginTop="8dp" />
 
     <TextView
+        android:id="@+id/tvPublishedBy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Published By" />
+
+    <TextView
+        android:id="@+id/publisher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
         android:id="@+id/tvPublished"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
