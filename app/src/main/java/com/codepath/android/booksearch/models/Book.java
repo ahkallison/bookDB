@@ -14,6 +14,7 @@ public class Book {
     private String openLibraryId;
     private String author;
     private String title;
+    private String published;
     public Book() { }
 
     public String getOpenLibraryId() {
@@ -27,6 +28,8 @@ public class Book {
     public String getAuthor() {
         return author;
     }
+
+    public String getPublished() { return published; }
 
     // Get book cover from covers API
     public String getCoverUrl() {
@@ -47,6 +50,7 @@ public class Book {
             }
             book.title = jsonObject.has("title_suggest") ? jsonObject.getString("title_suggest") : "";
             book.author = getAuthor(jsonObject);
+            book.published = jsonObject.getString("publish_date");
         } catch (JSONException e) {
             e.printStackTrace();
             return null;

@@ -36,6 +36,7 @@ public class BookDetailActivity extends AppCompatActivity {
     Book book;
     private ShareActionProvider miShareAction;
     private Intent shareIntent;
+    private TextView tvPublished;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class BookDetailActivity extends AppCompatActivity {
         ivBookCover = (ImageView) findViewById(R.id.ivBookCover);
         tvTitle = (TextView) findViewById(R.id.tvTitle);
         tvAuthor = (TextView) findViewById(R.id.tvAuthor);
+        tvPublished = (TextView) findViewById(R.id.tvPublished);
 
         // Extract book object from intent extras
         book = (Book) Parcels.unwrap(getIntent().getParcelableExtra("book_details"));
@@ -58,8 +60,7 @@ public class BookDetailActivity extends AppCompatActivity {
         // Use book object to populate data into views
         tvTitle.setText(book.getTitle());
         tvAuthor.setText(book.getAuthor());
-
-
+        tvPublished.setText(book.getPublished());
 
         // load image using glide
         Glide.with(this)
